@@ -6,20 +6,61 @@ using System.Threading.Tasks;
 
 namespace Ex1
 {
-    public abstract class Account
+    public abstract class Account : IComparable
     {
 
         //properties
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public double balance { get; set; }
+        public double Balance { get; set; }
         public int InterestDate { get; set; }
 
 
         //abstarct method
-        public abstract double CalculateInterset();
-        
+        public abstract double CalculateInterest();
+        public abstract int CompareTo(object obj);
+
+        //output format
+        public override string ToString()
+        {
+            return $"{LastName.ToUpper()}, {FirstName}";
+        }
 
 
     }
+        //Cuurent Account class 
+        public class CurrentAccount : Account
+        {
+            public double InterestRate = .03;
+
+            //overriding calculate interest method to calculate interest 
+            public override double CalculateInterest()
+            {
+                return Balance * InterestRate;
+            }
+
+            public override int CompareTo(object obj)
+            {
+                Account that = obj as Account;
+                return this.InterestDate.CompareTo(that.InterestDate);
+            }
+        }
+
+        public class SavingsAccount : Account
+        {
+            public double InterestRate = .06;
+
+
+            //overriding calculate interest method to calculate interest 
+            public override double CalculateInterest()
+            {
+                return Balance * InterestRate;
+            }
+
+            public override int CompareTo(object obj)
+            {
+                Account that = obj as Account;
+                return this.InterestDate.CompareTo(that.InterestDate);
+            }
+        }
 }
