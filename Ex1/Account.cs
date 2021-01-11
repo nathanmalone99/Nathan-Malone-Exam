@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Ex1
 {
+    //https://github.com/nathanmalone99/Nathan-Malone-Exam my github link
     public abstract class Account : IComparable
     {
 
         //properties
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int AccountNumber { get; set; }
         public double Balance { get; set; }
         public int InterestDate { get; set; }
 
@@ -23,7 +25,7 @@ namespace Ex1
         //output format
         public override string ToString()
         {
-            return $"{LastName.ToUpper()}, {FirstName}";
+            return $"{AccountNumber},{LastName.ToUpper()}, {FirstName}";
         }
 
 

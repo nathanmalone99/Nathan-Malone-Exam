@@ -25,6 +25,31 @@ namespace Ex1
             InitializeComponent();
         }
 
+        public List<Account> accounts;
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            accounts = new List<Account>();
+
+            CurrentAccount acc1 = new CurrentAccount() {FirstName = "Nathan", LastName = "Malone", AccountNumber = 1001, Balance = 5000, InterestDate = 11/01/2021};
+            SavingsAccount acc2 = new SavingsAccount() {FirstName = "Raymond", LastName = "Gallagher", AccountNumber = 2785, Balance = 2743, InterestDate = 11/01/2021};
+
+            accounts.Add(acc1);
+            accounts.Add(acc2);
+
+            UpdateListBox(accounts);
+
+            cbxCurrent_Account.IsChecked = true;
+            cbxSavings_Account.IsChecked = true;
+        }
+
+
+        public void UpdateListBox(List<Account> accounts)
+        {
+            accounts.Sort();
+
+            lbx_Accounts.ItemsSource = null;
+            lbx_Accounts.ItemsSource = accounts;
+        }
     }
 }

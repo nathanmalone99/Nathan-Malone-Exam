@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ex1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="409,75,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="532,75,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
@@ -23,9 +23,9 @@
         <Button x:Name="button2" Content="Interest" HorizontalAlignment="Left" Margin="695,211,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock x:Name="textBlock11" HorizontalAlignment="Left" Margin="409,357,0,0" TextWrapping="Wrap" Text="Transaction Account" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="532,350,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <CheckBox x:Name="checkBox" Content="Current Accounts" HorizontalAlignment="Left" Margin="63,44,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkBox1" Content="Savings Accounts" HorizontalAlignment="Left" Margin="201,44,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="236" Margin="44,99,0,0" VerticalAlignment="Top" Width="229"/>
+        <CheckBox x:Name="cbxCurrent_Account" Content="Current Accounts" HorizontalAlignment="Left" Margin="63,44,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxSavings_Account" Content="Savings Accounts" HorizontalAlignment="Left" Margin="201,44,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbx_Accounts" HorizontalAlignment="Left" Height="236" Margin="44,99,0,0" VerticalAlignment="Top" Width="229"/>
 
     </Grid>
 </Window>
