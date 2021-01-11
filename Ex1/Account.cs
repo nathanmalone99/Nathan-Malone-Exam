@@ -29,16 +29,7 @@ namespace Ex1
             return $"{AccountNumber},{LastName.ToUpper()}, {FirstName}";
         }
 
-        public double Deposit()
-        {
-
-        }
-
-        public double Withdraw()
-        {
-
-        }
-
+        
 
     }
         //Cuurent Account class 
