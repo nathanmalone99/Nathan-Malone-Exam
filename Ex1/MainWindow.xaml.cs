@@ -27,15 +27,16 @@ namespace Ex1
 
         public List<Account> accounts;
 
+        //wgen window is loaded it will show the 2 oblects I created
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             accounts = new List<Account>();
 
-            CurrentAccount acc1 = new CurrentAccount() {FirstName = "Nathan", LastName = "Malone", AccountNumber = 1001, Balance = 5000, InterestDate = 11/01/2021};
-            SavingsAccount acc2 = new SavingsAccount() {FirstName = "Raymond", LastName = "Gallagher", AccountNumber = 2785, Balance = 2743, InterestDate = 11/01/2021};
+            CurrentAccount cur1 = new CurrentAccount() {FirstName = "Nathan", LastName = "Malone", AccountNumber = 1001, Balance = 5000, InterestDate = 11/01/2021};
+            SavingsAccount sav2 = new SavingsAccount() {FirstName = "Raymond", LastName = "Gallagher", AccountNumber = 2785, Balance = 2743, InterestDate = 11/01/2021};
 
-            accounts.Add(acc1);
-            accounts.Add(acc2);
+            accounts.Add(cur1);
+            accounts.Add(sav2);
 
             UpdateListBox(accounts);
 
@@ -43,13 +44,39 @@ namespace Ex1
             cbxSavings_Account.IsChecked = true;
         }
 
-
+        //method for updating the display
         public void UpdateListBox(List<Account> accounts)
         {
             accounts.Sort();
 
             lbx_Accounts.ItemsSource = null;
             lbx_Accounts.ItemsSource = accounts;
+        }
+
+        private void lbx_Accounts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Account selected = lbx_Accounts.SelectedItem as Account;
+
+            if(selected != null)
+            {
+                tblkFirstname.Text = selected.FirstName;
+                tblkLastName.Text = selected.LastName;
+                tblkAccountNumber.Text.ToString = selected.AccountNumber;
+
+                if (selected is CurrentAccount)
+                {
+                    CurrentAccount cur = selected as CurrentAccount;
+
+                    cbxCurrent_Account.IsChecked = true;
+                }
+
+                else if(selected is SavingsAccount)
+                {
+                    SavingsAccount sav = selected as SavingsAccount;
+
+                    cbxSavings_Account.IsChecked = true;
+                }
+            }
         }
     }
 }
