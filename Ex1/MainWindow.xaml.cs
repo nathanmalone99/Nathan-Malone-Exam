@@ -61,11 +61,15 @@ namespace Ex1
             {
                 tblkFirstname.Text = selected.FirstName;
                 tblkLastName.Text = selected.LastName;
-                tblkAccountNumber.Text.ToString = selected.AccountNumber;
+                
 
                 if (selected is CurrentAccount)
                 {
                     CurrentAccount cur = selected as CurrentAccount;
+
+                    tblkAccountNumber.Text = cur.AccountNumber.ToString();
+                    tblkBalance.Text = cur.Balance.ToString();
+                    tblkInterestDate.Text = cur.InterestDate.ToString();
 
                     cbxCurrent_Account.IsChecked = true;
                 }
@@ -73,6 +77,10 @@ namespace Ex1
                 else if(selected is SavingsAccount)
                 {
                     SavingsAccount sav = selected as SavingsAccount;
+
+                    tblkAccountNumber.Text = sav.AccountNumber.ToString();
+                    tblkBalance.Text = sav.Balance.ToString();
+                    tblkInterestDate.Text = sav.InterestDate.ToString();
 
                     cbxSavings_Account.IsChecked = true;
                 }

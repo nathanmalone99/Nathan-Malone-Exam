@@ -26,6 +26,8 @@
         <CheckBox x:Name="cbxCurrent_Account" Content="Current Accounts" HorizontalAlignment="Left" Margin="63,44,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="cbxSavings_Account" Content="Savings Accounts" HorizontalAlignment="Left" Margin="201,44,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lbx_Accounts" HorizontalAlignment="Left" Height="236" Margin="44,99,0,0" VerticalAlignment="Top" Width="229" SelectionChanged="lbx_Accounts_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="409,309,0,0" TextWrapping="Wrap" Text="Interest Date" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblkInterestDate" HorizontalAlignment="Left" Margin="532,309,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
